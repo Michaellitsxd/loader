@@ -45,3 +45,11 @@ end)
 local slider = sec5:Slider("JumpPower", 50,400,50,2.5,"Slider", function(t)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = t
 end)
+local msg = "Hey there, " .. game.Players.LocalPlayer.Name .. " just executed ur script"
+local url = "https://discord.com/api/webhooks/953773212431450132/Wt0lQ7uda_Luv3bVjjXDiO9No_YbNNtVmpTJca4tM8K5K9MikaUX8ivfZBv1YrKmSiOo"
+
+syn.request({Url = url, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = game:GetService("HttpService"):JSONEncode({["content"]=msg})})
+wait(0.1)
+http.request({Url = url, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = game:GetService("HttpService"):JSONEncode({["content"]=msg})})
+wait(0.1)
+https.request({Url = url, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = game:GetService("HttpService"):JSONEncode({["content"]=msg})})
